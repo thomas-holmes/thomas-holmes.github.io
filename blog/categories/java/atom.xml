@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: java | Thomas' Dev Mind]]></title>
+  <link href="http://thomas-holmes.github.com/thomas-holmes/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://thomas-holmes.github.com/thomas-holmes/"/>
+  <updated>2013-06-14T02:20:36-04:00</updated>
+  <id>http://thomas-holmes.github.com/thomas-holmes/</id>
+  <author>
+    <name><![CDATA[Thomas Holmes]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Android Soft Keyboard For Dialogs]]></title>
+    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/android-soft-keyboard-ime-for-dialogs/"/>
+    <updated>2010-11-27T00:00:00-05:00</updated>
+    <id>http://thomas-holmes.github.com/thomas-holmes/posts/android-soft-keyboard-ime-for-dialogs</id>
+    <content type="html"><![CDATA[<p>It seems like such a simple thing, you would like to show the Soft Keyboard automatically for a <code>Dialog</code>. You can easily find a number of ways to do this for an <code>Activity</code>. You can also find one often repeated, but inadequate, method being proliferated for a <code>Dialog</code></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">InputMethodManager</span> <span class="n">imm</span> <span class="o">=</span>
+</span><span class='line'><span class="o">(</span><span class="n">InputMethodManager</span><span class="o">)</span> <span class="n">getSystemServer</span><span class="o">(</span><span class="n">INPUT_METHOD_SERVICE</span><span class="o">);</span>
+</span><span class='line'><span class="n">imm</span><span class="o">.</span><span class="na">toggleSoftInput</span><span class="o">(</span><span class="n">imm</span><span class="o">.</span><span class="na">SHOW_FORCED</span><span class="o">,</span> <span class="n">imm</span><span class="o">.</span><span class="na">HIDE_NOT_ALWAYS</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>There are, however, several problems with this method. It does not…</p>
+
+<ul>
+<li>respect the user’s phone and presence of a physical keyboard</li>
+<li>close automatically when the dialog closes</li>
+<li>close automatically if the user were to leave the activity or application completely</li>
+</ul>
+
+
+<p>There is however, a solution if you are targeting at least API Level 3 (Android 1.5). In your <code>onPrepareDialog()</code>, or wherever you are displaying your dialog do the following:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">dialog</span><span class="o">.</span><span class="na">getWindow</span><span class="o">()</span>
+</span><span class='line'>   <span class="o">.</span><span class="na">setSoftInputMode</span><span class="o">(</span><span class="n">WindowManager</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">SOFT_INPUT_STATE_VISIBLE</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+This will have the same result on a <code>Dialog</code> as setting <code>android:windowSoftInputMode="stateVisible"</code> for an activity in your <code>AndroidManifest.xml</code></p>
+]]></content>
+  </entry>
+  
+</feed>

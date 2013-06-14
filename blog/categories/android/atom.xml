@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: android | Thomas' Dev Mind]]></title>
+  <link href="http://thomas-holmes.github.com/thomas-holmes/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://thomas-holmes.github.com/thomas-holmes/"/>
+  <updated>2013-06-14T02:20:36-04:00</updated>
+  <id>http://thomas-holmes.github.com/thomas-holmes/</id>
+  <author>
+    <name><![CDATA[Thomas Holmes]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Why I love Android Development]]></title>
+    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/why-i-love-android-development/"/>
+    <updated>2010-12-02T00:00:00-05:00</updated>
+    <id>http://thomas-holmes.github.com/thomas-holmes/posts/why-i-love-android-development</id>
+    <content type="html"><![CDATA[<p>Android development strikes a sweet spot for me, as a developer seeking to be a contributing member in the software community.</p>
+
+<p>I have taken a few shots at web development and it just doesn’t feel right. While it is such a visual and rewarding experience. I just can’t shake the feeling of it being the most phenomenal kludge.</p>
+
+<p>It is easy to distribute and consume in an almost completely platform independent environment. I love being able to send a someone a link and say, “Hey, check this out!” and have them be greeted by a slick web app.</p>
+
+<p>But despite all of this it still feels wrong.</p>
+
+<p>Android offers you a much more consistent development platform while simultaneously keeping  much of the ease of distribution alive.</p>
+
+<p>I like how Android development feels like a merger between web accessibility and desktop consistency.</p>
+
+<p>I do realize that Android has its own host of complexities such as the numerous possible devices, API versions, and the challenges of the application lifecycle.</p>
+
+<p>It won’t say that it is perfect, but I am comfortable saying that it feels very right.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android Soft Keyboard For Dialogs]]></title>
+    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/android-soft-keyboard-ime-for-dialogs/"/>
+    <updated>2010-11-27T00:00:00-05:00</updated>
+    <id>http://thomas-holmes.github.com/thomas-holmes/posts/android-soft-keyboard-ime-for-dialogs</id>
+    <content type="html"><![CDATA[<p>It seems like such a simple thing, you would like to show the Soft Keyboard automatically for a <code>Dialog</code>. You can easily find a number of ways to do this for an <code>Activity</code>. You can also find one often repeated, but inadequate, method being proliferated for a <code>Dialog</code></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">InputMethodManager</span> <span class="n">imm</span> <span class="o">=</span>
+</span><span class='line'><span class="o">(</span><span class="n">InputMethodManager</span><span class="o">)</span> <span class="n">getSystemServer</span><span class="o">(</span><span class="n">INPUT_METHOD_SERVICE</span><span class="o">);</span>
+</span><span class='line'><span class="n">imm</span><span class="o">.</span><span class="na">toggleSoftInput</span><span class="o">(</span><span class="n">imm</span><span class="o">.</span><span class="na">SHOW_FORCED</span><span class="o">,</span> <span class="n">imm</span><span class="o">.</span><span class="na">HIDE_NOT_ALWAYS</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>There are, however, several problems with this method. It does not…</p>
+
+<ul>
+<li>respect the user’s phone and presence of a physical keyboard</li>
+<li>close automatically when the dialog closes</li>
+<li>close automatically if the user were to leave the activity or application completely</li>
+</ul>
+
+
+<p>There is however, a solution if you are targeting at least API Level 3 (Android 1.5). In your <code>onPrepareDialog()</code>, or wherever you are displaying your dialog do the following:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">dialog</span><span class="o">.</span><span class="na">getWindow</span><span class="o">()</span>
+</span><span class='line'>   <span class="o">.</span><span class="na">setSoftInputMode</span><span class="o">(</span><span class="n">WindowManager</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">SOFT_INPUT_STATE_VISIBLE</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+This will have the same result on a <code>Dialog</code> as setting <code>android:windowSoftInputMode="stateVisible"</code> for an activity in your <code>AndroidManifest.xml</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Custom Android RadioButton]]></title>
+    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/custom-android-radiobutton/"/>
+    <updated>2010-11-24T00:00:00-05:00</updated>
+    <id>http://thomas-holmes.github.com/thomas-holmes/posts/custom-android-radiobutton</id>
+    <content type="html"><![CDATA[<p>I was browsing StackOverflow and came across a question about making custom <code>RadioButtons</code> and figured I could answer so I decided to take the plunge.</p>
+
+<p>To implement a custom styled RadioButton you can follow the below steps or look at the complete example source <a href="http://code.devminded.com/custom-radiobutton/src">here</a>.</p>
+
+<p>Create the drawable resources for your custom RadioButton. You should have at least 4 icons:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Pressed </th>
+<th>Checked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>True    </td>
+<td>True   </td>
+</tr>
+<tr>
+<td></td>
+<td>True    </td>
+<td>False  </td>
+</tr>
+<tr>
+<td></td>
+<td>False   </td>
+<td>True   </td>
+</tr>
+<tr>
+<td></td>
+<td>False   </td>
+<td>False  </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Place your images in <code>res/drawable</code> or if if you have a version for each screen density place them in their corresponding <code>res/drawable-ldpi</code>, <code>res/drawable-mdpi</code>, and <code>res/drawable-hdpi</code> folders.</p>
+
+<p>Then create a <code>selector</code> type XML file in res/drawable. Here is my <code>res/drawable/button_radio.xml</code></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;selector</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="ni">&amp;lt;</span>item android:state_checked=&quot;true&quot; android:state_pressed=&quot;false&quot;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>  android:drawable=&quot;@drawable/radio_on&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="ni">&amp;lt;</span>item android:state_checked=&quot;false&quot; android:state_pressed=&quot;false&quot;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>  android:drawable=&quot;@drawable/radio_off&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="ni">&amp;lt;</span>item android:state_checked=&quot;true&quot; android:state_pressed=&quot;true&quot;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>  android:drawable=&quot;@drawable/radio_on_pressed&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="ni">&amp;lt;</span>item android:state_checked=&quot;false&quot; android:state_pressed=&quot;true&quot;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>  android:drawable=&quot;@drawable/radio_off_pressed&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/selector&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Setup your RadioGroup like so:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;RadioGroup</span> <span class="na">android:layout_width=</span><span class="s">&quot;fill_parent&quot;</span>
+</span><span class='line'>   <span class="na">android:layout_height=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>   <span class="na">android:orientation=</span><span class="s">&quot;horizontal&quot;</span>
+</span><span class='line'>   <span class="na">android:checkedButton=</span><span class="s">&quot;@+id/first&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>   <span class="ni">&amp;lt;</span>RadioButton android:id=&quot;@+id/first&quot;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>  android:width=&quot;50dp&quot;
+</span><span class='line'>  android:height=&quot;50dp&quot;
+</span><span class='line'>  android:button=&quot;@drawable/button_radio&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>   <span class="ni">&amp;lt;</span>RadioButton android:id=&quot;@+id/second&quot;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>  android:width=&quot;50dp&quot;
+</span><span class='line'>  android:height=&quot;50dp&quot;
+</span><span class='line'>  android:button=&quot;@drawable/button_radio&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>   <span class="ni">&amp;lt;</span>RadioButton android:id=&quot;@+id/third&quot;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>  android:width=&quot;50dp&quot;
+</span><span class='line'>  android:height=&quot;50dp&quot;
+</span><span class='line'>  android:button=&quot;@drawable/button_radio&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>   <span class="ni">&amp;lt;</span>RadioButton android:id=&quot;@+id/fourth&quot;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>  android:width=&quot;50dp&quot;
+</span><span class='line'>  android:height=&quot;50dp&quot;
+</span><span class='line'>  android:button=&quot;@drawable/button_radio&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/RadioGroup&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>I have specified dimension of 50dp as the dimension of my drawables are 50px x 50px. Also notice I am setting <code>android:button</code> and not <code>android:background</code>.</p>
+
+<p><img src="/images/customradio.png" title="'Custom RadioButton'" ></p>
+
+<p>Hopefully this can serve as a nice starting point for anyone looking to create some new and interesting effects with simple <code>RadioButtons</code>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android TextView With Custom Link Text]]></title>
+    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/android-textview-with-custom-link-text/"/>
+    <updated>2010-11-21T00:00:00-05:00</updated>
+    <id>http://thomas-holmes.github.com/thomas-holmes/posts/android-textview-with-custom-link-text</id>
+    <content type="html"><![CDATA[<p>This is just going to be a quick how-to on creating a TextView with custom URL text.</p>
+
+<p>To do this, you need to create a Spannable text object by using Html.fromHtml and then setting the MovementMethod of the TextView to a LinkMovementMethod. Here is an example using a dialog.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">dialog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dialog</span><span class="o">(</span><span class="k">this</span><span class="o">);</span><span class="n">dialog</span><span class="o">.</span><span class="na">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">about</span><span class="o">);</span>
+</span><span class='line'><span class="n">dialog</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">about_score_it</span><span class="o">);</span>
+</span><span class='line'><span class="n">TextView</span> <span class="n">website</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span><span class="n">dialog</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">about_website</span><span class="o">);&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">String</span> <span class="n">realURL</span> <span class="o">=</span> <span class="s">&quot;http://blog.devminded.com/projects/score-it&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span> <span class="n">visibleURL</span> <span class="o">=</span> <span class="s">&quot;http://blog.devminded.com&quot;</span><span class="o">;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c1">//The following builds the spannable item and will cause the text to display as a link</span>
+</span><span class='line'><span class="n">website</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">Html</span><span class="o">.</span><span class="na">fromHtml</span><span class="o">(</span><span class="s">&quot;&lt;a href=\&quot; + realURL + &quot;</span><span class="err">\</span><span class="s">&quot;&gt;&quot;</span> <span class="o">+</span> <span class="n">visibleURL</span> <span class="o">+</span> <span class="s">&quot;&lt;/a&gt;&quot;</span><span class="o">));&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c1">//The following makes it clickable</span>
+</span><span class='line'><span class="n">website</span><span class="o">.</span><span class="na">setMovementMethod</span><span class="o">(</span><span class="n">LinkMovementMethod</span><span class="o">.</span><span class="na">getInstance</span><span class="o">());</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Or with resources:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">dialog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dialog</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+</span><span class='line'><span class="n">dialog</span><span class="o">.</span><span class="na">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">about</span><span class="o">);</span>
+</span><span class='line'><span class="n">dialog</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">about_score_it</span><span class="o">);</span>
+</span><span class='line'><span class="n">TextView</span> <span class="n">website</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span><span class="n">dialog</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">about_website</span><span class="o">);&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">website</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">Html</span><span class="o">.</span><span class="na">fromHtml</span><span class="o">(</span><span class="s">&quot;&lt;a href=\&quot;&quot;</span> <span class="o">+</span> <span class="n">mRes</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">about_score_it_website_url</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot;\&quot;&gt;&quot;</span> <span class="o">+</span> <span class="n">mRes</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">about_score_it_website_text</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot;&lt;/a&gt;&quot;</span><span class="o">));&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">website</span><span class="o">.</span><span class="na">setMovementMethod</span><span class="o">(</span><span class="n">LinkMovementMethod</span><span class="o">.</span><span class="na">getInstance</span><span class="o">());</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>To see the full context of this example please check out <a href="http://code.devminded.com/score-it/src/78a59d314ce2/src/com/devminded/scoreit/ScoreIt.java">ScoreIt.java</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android SQLite Database Management]]></title>
+    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/android-sqlite-database-management/"/>
+    <updated>2010-11-16T00:00:00-05:00</updated>
+    <id>http://thomas-holmes.github.com/thomas-holmes/posts/android-sqlite-database-management</id>
+    <content type="html"><![CDATA[<p>Just as I was trying to wrap up Score It! I noticed my Logcat window was getting flooded with error messages. Somehow during all my debugging and development I didn’t notice the pages of errors being thrown by SQLite.</p>
+
+<p><code>java.lang.IllegalStateException ... SQLiteDatabase created and never closed</code></p>
+
+<p>Now these errors didn’t appear to have any adverse affects on my application but I certainly did not want to release an app that I knew was spewing errors. I wrestled with this for an evening searching and trying everything I could think of.</p>
+
+<p>Some people suggested opening and closing the database around all accesses. Others suggested littering all of the lifecycle overrides with open and close statements. I found the former unreasonable and the latter inadequate. I needed to keep my database connections open as much as possible because I was working with ListView and ListActivity objects.</p>
+
+<p>I managed to reduce the frequency of the errors but it was still happening consistently if I followed specific steps but I decided to throw in the towel for the time being.</p>
+
+<p>The next day I decided to revisit the issue and make sure I had a better understanding of the problem. I stepped through my app, using a ridiculous number of breakpoints. It soon became clear that it was not a specific line of code that was causing the problem. This error was being generated by the database object when the garbage collector was hitting it.</p>
+
+<p>I experimented a bit further and came up with a solution that seemed to eliminate all of my SQLite database errors.</p>
+
+<p>In the Activities that maintained a database connection I put a close() statement in the Activity.OnDestroy() override:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
+</span><span class='line'>    <span class="n">mDbHelper</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>In my database helper class, modeled after Notepad, I changed the open function from:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kd">public</span> <span class="n">ScoreDbAdapter</span> <span class="n">open</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">mDbHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatabaseHelper</span><span class="o">(</span><span class="n">mCtx</span><span class="o">);</span>
+</span><span class='line'>    <span class="n">mDb</span> <span class="o">=</span> <span class="n">mDbHelper</span><span class="o">.</span><span class="na">getWritableDatabase</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+To the following:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kd">public</span> <span class="n">ScoreDbAdapter</span> <span class="n">open</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">mDbHelper</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">mDbHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatabaseHelper</span><span class="o">(</span><span class="n">mCtx</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>    <span class="n">mDb</span> <span class="o">=</span> <span class="n">mDbHelper</span><span class="o">.</span><span class="na">getWritableDatabase</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+This cleared up all the errors.</p>
+]]></content>
+  </entry>
+  
+</feed>

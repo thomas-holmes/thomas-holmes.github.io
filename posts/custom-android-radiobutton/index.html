@@ -1,0 +1,273 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Custom Android RadioButton - Thomas' Dev Mind</title>
+    <meta name="author" content="Thomas Holmes">
+    
+	<meta name="description" content="I was browsing StackOverflow and came across a question about making custom RadioButtons and figured I could answer so I decided to take the plunge. &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Thomas' Dev Mind" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1>
+    <div id="headerbg">
+        Thomas Holmes
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/thomas-holmes" class="github" title="Github"></a>
+  </li>
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/115958468492181944160?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  
+  <!-- Twitter -->
+  <li>
+  <a href="http://www.twitter.com/_tholmes" class="twitter" title="Twitter"></a>
+  </li>
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">Custom Android RadioButton</h2>
+	<div class="entry-content"><p>I was browsing StackOverflow and came across a question about making custom <code>RadioButtons</code> and figured I could answer so I decided to take the plunge.</p>
+
+<p>To implement a custom styled RadioButton you can follow the below steps or look at the complete example source <a href="http://code.devminded.com/custom-radiobutton/src">here</a>.</p>
+
+<p>Create the drawable resources for your custom RadioButton. You should have at least 4 icons:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Pressed </th>
+<th>Checked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>True    </td>
+<td>True   </td>
+</tr>
+<tr>
+<td></td>
+<td>True    </td>
+<td>False  </td>
+</tr>
+<tr>
+<td></td>
+<td>False   </td>
+<td>True   </td>
+</tr>
+<tr>
+<td></td>
+<td>False   </td>
+<td>False  </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Place your images in <code>res/drawable</code> or if if you have a version for each screen density place them in their corresponding <code>res/drawable-ldpi</code>, <code>res/drawable-mdpi</code>, and <code>res/drawable-hdpi</code> folders.</p>
+
+<p>Then create a <code>selector</code> type XML file in res/drawable. Here is my <code>res/drawable/button_radio.xml</code></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;selector</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;item</span> <span class="na">android:state_checked=</span><span class="s">&quot;true&quot;</span> <span class="na">android:state_pressed=</span><span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="na">android:drawable=</span><span class="s">&quot;@drawable/radio_on&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;item</span> <span class="na">android:state_checked=</span><span class="s">&quot;false&quot;</span> <span class="na">android:state_pressed=</span><span class="s">&quot;false&quot;</span>
+</span><span class='line'>      <span class="na">android:drawable=</span><span class="s">&quot;@drawable/radio_off&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;item</span> <span class="na">android:state_checked=</span><span class="s">&quot;true&quot;</span> <span class="na">android:state_pressed=</span><span class="s">&quot;true&quot;</span>
+</span><span class='line'>      <span class="na">android:drawable=</span><span class="s">&quot;@drawable/radio_on_pressed&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;item</span> <span class="na">android:state_checked=</span><span class="s">&quot;false&quot;</span> <span class="na">android:state_pressed=</span><span class="s">&quot;true&quot;</span>
+</span><span class='line'>      <span class="na">android:drawable=</span><span class="s">&quot;@drawable/radio_off_pressed&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/selector&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Setup your RadioGroup like so:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;RadioGroup</span> <span class="na">android:layout_width=</span><span class="s">&quot;fill_parent&quot;</span>
+</span><span class='line'>   <span class="na">android:layout_height=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>   <span class="na">android:orientation=</span><span class="s">&quot;horizontal&quot;</span>
+</span><span class='line'>   <span class="na">android:checkedButton=</span><span class="s">&quot;@+id/first&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;RadioButton</span> <span class="na">android:id=</span><span class="s">&quot;@+id/first&quot;</span>
+</span><span class='line'>      <span class="na">android:width=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>      <span class="na">android:height=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>      <span class="na">android:button=</span><span class="s">&quot;@drawable/button_radio&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;RadioButton</span> <span class="na">android:id=</span><span class="s">&quot;@+id/second&quot;</span>
+</span><span class='line'>      <span class="na">android:width=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>      <span class="na">android:height=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>      <span class="na">android:button=</span><span class="s">&quot;@drawable/button_radio&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;RadioButton</span> <span class="na">android:id=</span><span class="s">&quot;@+id/third&quot;</span>
+</span><span class='line'>      <span class="na">android:width=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>      <span class="na">android:height=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>      <span class="na">android:button=</span><span class="s">&quot;@drawable/button_radio&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;RadioButton</span> <span class="na">android:id=</span><span class="s">&quot;@+id/fourth&quot;</span>
+</span><span class='line'>      <span class="na">android:width=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>      <span class="na">android:height=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>      <span class="na">android:button=</span><span class="s">&quot;@drawable/button_radio&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/RadioGroup&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I have specified dimension of 50dp as the dimension of my drawables are 50px x 50px. Also notice I am setting <code>android:button</code> and not <code>android:background</code>.</p>
+
+<p><img src="/images/customradio.png" title="'Custom RadioButton'" ></p>
+
+<p>Hopefully this can serve as a nice starting point for anyone looking to create some new and interesting effects with simple <code>RadioButtons</code>.</p>
+</div>
+
+<div class="meta">
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2013
+
+    Thomas Holmes
+
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
