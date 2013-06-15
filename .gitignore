@@ -1,3 +1,4 @@
+*.swp
 .preview-mode
 .bundle
 .DS_Store
