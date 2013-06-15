@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vim | Thomas' Dev Mind]]></title>
+  <link href="http://thomas-holmes.github.com/thomas-holmes/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://thomas-holmes.github.com/thomas-holmes/"/>
+  <updated>2013-06-15T01:14:47-04:00</updated>
+  <id>http://thomas-holmes.github.com/thomas-holmes/</id>
+  <author>
+    <name><![CDATA[Thomas Holmes]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Falling in Love With Vim All Over Again]]></title>
+    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/falling-in-love-with-vim/"/>
+    <updated>2013-06-14T23:50:00-04:00</updated>
+    <id>http://thomas-holmes.github.com/thomas-holmes/posts/falling-in-love-with-vim</id>
+    <content type="html"><![CDATA[<p>About about 2 years ago, I stopped using vim. I was sad, but didn't think too much of it. I had just moved on from a job where I used vim full time. Unfortunately, it was in a language known as PowerBASIC. This language has very low adoption and there was no community tooling available. I had to handroll my own syntax and indentation files (I was able to steal from the BASIC files). I had no tags support and never felt like I really got to hit my stride despite using vim daily for over 3 years.</p>
+
+<p>Starting in late 2011 I've been working primarily in Visual Studio. For the most part it is a great IDE with a lot of powerful features. Combined with the refactoring and productivity shortcuts available in <a href="http://devexpress.com">CodeRush</a> things still felt pretty nice. I tried using some vim keybinding addons but they were never as responsive as is necessary to work the vim way. In addition to no longer using vim at work my amount of personal development work had sharply declined. What little I did was done with Visual Studio. I started to forget how nice working in vim really was. Maybe it wasn't really necessary, I thought. Especially not with tooling this powerful.</p>
+
+<p>Then something changed. I decided to make a committed effort to learning web development. Instead of taking the obvious route of using ASP.NET I decided to go a completely different direction and use Ruby on Rails. I'm writing tons of code on in my free time and doing it all in vim. I've never been happer! The flexibility of Ruby is beautiful and expressive. And Rails, while sometimes confusing and magical, makes a lot of sense and helps you get things done. I'm working a ton in vim and loving it.</p>
+
+<p>After being "lost" for so long vim has reminded me what a powerful <em>really</em> development environment is.</p>
+
+<h3>Power is the inverse of friction between creativity and expression</h3>
+
+<p> Big meaty IDEs lured me into thinking lots of features, integrated menus, and GUI tools were power. This is not to say that vim lacks features or power. It wants for neither.</p>
+
+<p>Nothing else I have used has come close to vim. It has power that I have never had to pay for with my effectiveness or ability to express myself. Every time the big feature-rich IDE churns for a quarter second as it parses background files or does <em>whatever the heck it thinks is more important than me typing</em> I am jarred. Effectiveness drops. This aggregates over the day I find myself frustrated, distracted, and ineffective. Vim doesn't do this to me.</p>
+
+<p>Vim. <em>I've missed you.</em></p>
+]]></content>
+  </entry>
+  
+</feed>
