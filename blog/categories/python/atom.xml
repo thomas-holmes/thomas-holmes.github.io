@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: python | Thomas' Dev Mind]]></title>
-  <link href="http://thomas-holmes.github.com/thomas-holmes/blog/categories/python/atom.xml" rel="self"/>
-  <link href="http://thomas-holmes.github.com/thomas-holmes/"/>
-  <updated>2013-06-15T01:14:47-04:00</updated>
-  <id>http://thomas-holmes.github.com/thomas-holmes/</id>
+  <link href="http://thomas.holmes.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://thomas.holmes.io/"/>
+  <updated>2013-06-15T01:32:58-04:00</updated>
+  <id>http://thomas.holmes.io/</id>
   <author>
     <name><![CDATA[Thomas Holmes]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[RPS Contest]]></title>
-    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/rps-contest/"/>
+    <link href="http://thomas.holmes.io/posts/rps-contest/"/>
     <updated>2011-06-23T00:00:00-04:00</updated>
-    <id>http://thomas-holmes.github.com/thomas-holmes/posts/rps-contest</id>
+    <id>http://thomas.holmes.io/posts/rps-contest</id>
     <content type="html"><![CDATA[<p>The other week I came across a neat programming challenge called The RPS(Rock Paper Scissors) Programming Competition. The goal is to write a Python program that plays RPS against other programs. Each match is a best of 1,000.</p>
 
 <p>This challenge caught my interest with its unique combination of ease and depth. While my best submission has dropped to a roughly 60% win rate there are some truely clever programs submitted. I am certain I can improve greatly and develop a submission over the coming weeks that is able to achieve a 70% win rate.</p>

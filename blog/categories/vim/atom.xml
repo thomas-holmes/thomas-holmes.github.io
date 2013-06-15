@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: vim | Thomas' Dev Mind]]></title>
-  <link href="http://thomas-holmes.github.com/thomas-holmes/blog/categories/vim/atom.xml" rel="self"/>
-  <link href="http://thomas-holmes.github.com/thomas-holmes/"/>
-  <updated>2013-06-15T01:14:47-04:00</updated>
-  <id>http://thomas-holmes.github.com/thomas-holmes/</id>
+  <link href="http://thomas.holmes.io/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://thomas.holmes.io/"/>
+  <updated>2013-06-15T01:32:58-04:00</updated>
+  <id>http://thomas.holmes.io/</id>
   <author>
     <name><![CDATA[Thomas Holmes]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Falling in Love With Vim All Over Again]]></title>
-    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/falling-in-love-with-vim/"/>
+    <link href="http://thomas.holmes.io/posts/falling-in-love-with-vim/"/>
     <updated>2013-06-14T23:50:00-04:00</updated>
-    <id>http://thomas-holmes.github.com/thomas-holmes/posts/falling-in-love-with-vim</id>
+    <id>http://thomas.holmes.io/posts/falling-in-love-with-vim</id>
     <content type="html"><![CDATA[<p>About about 2 years ago, I stopped using vim. I was sad, but didn't think too much of it. I had just moved on from a job where I used vim full time. Unfortunately, it was in a language known as PowerBASIC. This language has very low adoption and there was no community tooling available. I had to handroll my own syntax and indentation files (I was able to steal from the BASIC files). I had no tags support and never felt like I really got to hit my stride despite using vim daily for over 3 years.</p>
 
 <p>Starting in late 2011 I've been working primarily in Visual Studio. For the most part it is a great IDE with a lot of powerful features. Combined with the refactoring and productivity shortcuts available in <a href="http://devexpress.com">CodeRush</a> things still felt pretty nice. I tried using some vim keybinding addons but they were never as responsive as is necessary to work the vim way. In addition to no longer using vim at work my amount of personal development work had sharply declined. What little I did was done with Visual Studio. I started to forget how nice working in vim really was. Maybe it wasn't really necessary, I thought. Especially not with tooling this powerful.</p>

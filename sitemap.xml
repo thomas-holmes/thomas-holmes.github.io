@@ -1,67 +1,59 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>
-            http://thomas-holmes.github.com/thomas-holmes/posts/android-sqlite-database-management/
-        </loc>
+        <loc>http://thomas.holmes.io/posts/android-sqlite-database-management/</loc>
         <lastmod>2013-06-15T01:02:20-04:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://thomas-holmes.github.com/thomas-holmes/posts/android-textview-with-custom-link-text/
-        </loc>
+        <loc>http://thomas.holmes.io/posts/android-textview-with-custom-link-text/</loc>
         <lastmod>2013-06-15T01:02:20-04:00</lastmod>
     </url>
     <url>
-        <loc>http://thomas-holmes.github.com/thomas-holmes/posts/custom-android-radiobutton/</loc>
+        <loc>http://thomas.holmes.io/posts/custom-android-radiobutton/</loc>
         <lastmod>2013-06-15T01:02:20-04:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://thomas-holmes.github.com/thomas-holmes/posts/android-soft-keyboard-ime-for-dialogs/
-        </loc>
+        <loc>http://thomas.holmes.io/posts/android-soft-keyboard-ime-for-dialogs/</loc>
         <lastmod>2013-06-15T01:02:20-04:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://thomas-holmes.github.com/thomas-holmes/posts/why-i-love-android-development/
-        </loc>
+        <loc>http://thomas.holmes.io/posts/why-i-love-android-development/</loc>
         <lastmod>2013-06-15T01:02:20-04:00</lastmod>
     </url>
     <url>
-        <loc>http://thomas-holmes.github.com/thomas-holmes/posts/rps-contest/</loc>
+        <loc>http://thomas.holmes.io/posts/rps-contest/</loc>
         <lastmod>2013-06-15T01:02:20-04:00</lastmod>
     </url>
     <url>
-        <loc>http://thomas-holmes.github.com/thomas-holmes/posts/ruby-rails-and-friends/</loc>
+        <loc>http://thomas.holmes.io/posts/ruby-rails-and-friends/</loc>
         <lastmod>2013-06-15T01:02:20-04:00</lastmod>
     </url>
     <url>
-        <loc>http://thomas-holmes.github.com/thomas-holmes/posts/falling-in-love-with-vim/</loc>
+        <loc>http://thomas.holmes.io/posts/falling-in-love-with-vim/</loc>
         <lastmod>2013-06-15T01:13:16-04:00</lastmod>
     </url>
     <url>
-        <loc>http://thomas-holmes.github.com/thomas-holmes/posts/</loc>
+        <loc>http://thomas.holmes.io/posts/</loc>
         <lastmod>2013-06-15T01:13:16-04:00</lastmod>
     </url>
     <url>
-        <loc>http://thomas-holmes.github.com/thomas-holmes/projects/score-it/</loc>
+        <loc>http://thomas.holmes.io/projects/score-it/</loc>
         <lastmod>2013-06-15T01:02:20-04:00</lastmod>
     </url>
     <url>
-        <loc>http://thomas-holmes.github.com/thomas-holmes/search.html</loc>
+        <loc>http://thomas.holmes.io/search.html</loc>
         <lastmod>2013-06-15T01:02:20-04:00</lastmod>
     </url>
     <url>
-        <loc>http://thomas-holmes.github.com/thomas-holmes/robots.txt</loc>
+        <loc>http://thomas.holmes.io/robots.txt</loc>
         <lastmod>2013-06-15T01:02:20-04:00</lastmod>
     </url>
     <url>
-        <loc>http://thomas-holmes.github.com/thomas-holmes/blog/archives/</loc>
+        <loc>http://thomas.holmes.io/blog/archives/</loc>
         <lastmod>2013-06-15T01:13:16-04:00</lastmod>
     </url>
     <url>
-        <loc>http://thomas-holmes.github.com/thomas-holmes/</loc>
+        <loc>http://thomas.holmes.io/</loc>
         <lastmod>2013-06-15T01:13:16-04:00</lastmod>
     </url>
 </urlset>

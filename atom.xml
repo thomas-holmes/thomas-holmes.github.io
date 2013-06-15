@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Thomas' Dev Mind]]></title>
-  <link href="http://thomas-holmes.github.com/thomas-holmes/atom.xml" rel="self"/>
-  <link href="http://thomas-holmes.github.com/thomas-holmes/"/>
-  <updated>2013-06-15T01:14:47-04:00</updated>
-  <id>http://thomas-holmes.github.com/thomas-holmes/</id>
+  <link href="http://thomas.holmes.io/atom.xml" rel="self"/>
+  <link href="http://thomas.holmes.io/"/>
+  <updated>2013-06-15T01:32:58-04:00</updated>
+  <id>http://thomas.holmes.io/</id>
   <author>
     <name><![CDATA[Thomas Holmes]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Falling in Love With Vim All Over Again]]></title>
-    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/falling-in-love-with-vim/"/>
+    <link href="http://thomas.holmes.io/posts/falling-in-love-with-vim/"/>
     <updated>2013-06-14T23:50:00-04:00</updated>
-    <id>http://thomas-holmes.github.com/thomas-holmes/posts/falling-in-love-with-vim</id>
+    <id>http://thomas.holmes.io/posts/falling-in-love-with-vim</id>
     <content type="html"><![CDATA[<p>About about 2 years ago, I stopped using vim. I was sad, but didn&#8217;t think too much of it. I had just moved on from a job where I used vim full time. Unfortunately, it was in a language known as PowerBASIC. This language has very low adoption and there was no community tooling available. I had to handroll my own syntax and indentation files (I was able to steal from the BASIC files). I had no tags support and never felt like I really got to hit my stride despite using vim daily for over 3 years.</p>
 
 <p>Starting in late 2011 I&#8217;ve been working primarily in Visual Studio. For the most part it is a great IDE with a lot of powerful features. Combined with the refactoring and productivity shortcuts available in <a href="http://devexpress.com">CodeRush</a> things still felt pretty nice. I tried using some vim keybinding addons but they were never as responsive as is necessary to work the vim way. In addition to no longer using vim at work my amount of personal development work had sharply declined. What little I did was done with Visual Studio. I started to forget how nice working in vim really was. Maybe it wasn&#8217;t really necessary, I thought. Especially not with tooling this powerful.</p>
@@ -38,9 +38,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ruby, Rails, And Friends]]></title>
-    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/ruby-rails-and-friends/"/>
+    <link href="http://thomas.holmes.io/posts/ruby-rails-and-friends/"/>
     <updated>2013-05-15T00:00:00-04:00</updated>
-    <id>http://thomas-holmes.github.com/thomas-holmes/posts/ruby-rails-and-friends</id>
+    <id>http://thomas.holmes.io/posts/ruby-rails-and-friends</id>
     <content type="html"><![CDATA[<p>For the last 6 months I’ve been slowly teaching myself Ruby on Rails. It’s been a lot of fun and I’ve loved most every minute of it. My last run at web development was several years ago before technologies like Heroku were common. I spent some time trying to learn Django but did not find the ecosystem quite as mature as I would have liked. I found myself stuck playing sysadmin on a webserver, which is a role I am neither interested in or great at. So I hung up web development, experimented with mobile went back to desktop application development.</p>
 
 <p>Four years later, enter Ruby on Rails. I’m having a blast. The tools are great. The community is wonderful. And after spending every day for two years with my nose buried in Visual Studio I am thrilled to be back to vim. It is <em>bliss</em>.</p>
@@ -53,9 +53,9 @@
   
   <entry>
     <title type="html"><![CDATA[RPS Contest]]></title>
-    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/rps-contest/"/>
+    <link href="http://thomas.holmes.io/posts/rps-contest/"/>
     <updated>2011-06-23T00:00:00-04:00</updated>
-    <id>http://thomas-holmes.github.com/thomas-holmes/posts/rps-contest</id>
+    <id>http://thomas.holmes.io/posts/rps-contest</id>
     <content type="html"><![CDATA[<p>The other week I came across a neat programming challenge called The RPS(Rock Paper Scissors) Programming Competition. The goal is to write a Python program that plays RPS against other programs. Each match is a best of 1,000.</p>
 
 <p>This challenge caught my interest with its unique combination of ease and depth. While my best submission has dropped to a roughly 60% win rate there are some truely clever programs submitted. I am certain I can improve greatly and develop a submission over the coming weeks that is able to achieve a 70% win rate.</p>
@@ -66,9 +66,9 @@
   
   <entry>
     <title type="html"><![CDATA[Why I love Android Development]]></title>
-    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/why-i-love-android-development/"/>
+    <link href="http://thomas.holmes.io/posts/why-i-love-android-development/"/>
     <updated>2010-12-02T00:00:00-05:00</updated>
-    <id>http://thomas-holmes.github.com/thomas-holmes/posts/why-i-love-android-development</id>
+    <id>http://thomas.holmes.io/posts/why-i-love-android-development</id>
     <content type="html"><![CDATA[<p>Android development strikes a sweet spot for me, as a developer seeking to be a contributing member in the software community.</p>
 
 <p>I have taken a few shots at web development and it just doesn’t feel right. While it is such a visual and rewarding experience. I just can’t shake the feeling of it being the most phenomenal kludge.</p>
@@ -89,9 +89,9 @@
   
   <entry>
     <title type="html"><![CDATA[Android Soft Keyboard For Dialogs]]></title>
-    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/android-soft-keyboard-ime-for-dialogs/"/>
+    <link href="http://thomas.holmes.io/posts/android-soft-keyboard-ime-for-dialogs/"/>
     <updated>2010-11-27T00:00:00-05:00</updated>
-    <id>http://thomas-holmes.github.com/thomas-holmes/posts/android-soft-keyboard-ime-for-dialogs</id>
+    <id>http://thomas.holmes.io/posts/android-soft-keyboard-ime-for-dialogs</id>
     <content type="html"><![CDATA[<p>It seems like such a simple thing, you would like to show the Soft Keyboard automatically for a <code>Dialog</code>. You can easily find a number of ways to do this for an <code>Activity</code>. You can also find one often repeated, but inadequate, method being proliferated for a <code>Dialog</code></p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -127,9 +127,9 @@
   
   <entry>
     <title type="html"><![CDATA[Custom Android RadioButton]]></title>
-    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/custom-android-radiobutton/"/>
+    <link href="http://thomas.holmes.io/posts/custom-android-radiobutton/"/>
     <updated>2010-11-24T00:00:00-05:00</updated>
-    <id>http://thomas-holmes.github.com/thomas-holmes/posts/custom-android-radiobutton</id>
+    <id>http://thomas.holmes.io/posts/custom-android-radiobutton</id>
     <content type="html"><![CDATA[<p>I was browsing StackOverflow and came across a question about making custom <code>RadioButtons</code> and figured I could answer so I decided to take the plunge.</p>
 
 <p>To implement a custom styled RadioButton you can follow the below steps or look at the complete example source <a href="http://code.devminded.com/custom-radiobutton/src">here</a>.</p>
@@ -245,7 +245,7 @@
 
 <p>I have specified dimension of 50dp as the dimension of my drawables are 50px x 50px. Also notice I am setting <code>android:button</code> and not <code>android:background</code>.</p>
 
-<p><img src="http://thomas-holmes.github.com/thomas-holmes/images/customradio.png" title="'Custom RadioButton'" ></p>
+<p><img src="http://thomas.holmes.io/images/customradio.png" title="'Custom RadioButton'" ></p>
 
 <p>Hopefully this can serve as a nice starting point for anyone looking to create some new and interesting effects with simple <code>RadioButtons</code>.</p>
 ]]></content>
@@ -253,9 +253,9 @@
   
   <entry>
     <title type="html"><![CDATA[Android TextView With Custom Link Text]]></title>
-    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/android-textview-with-custom-link-text/"/>
+    <link href="http://thomas.holmes.io/posts/android-textview-with-custom-link-text/"/>
     <updated>2010-11-21T00:00:00-05:00</updated>
-    <id>http://thomas-holmes.github.com/thomas-holmes/posts/android-textview-with-custom-link-text</id>
+    <id>http://thomas.holmes.io/posts/android-textview-with-custom-link-text</id>
     <content type="html"><![CDATA[<p>This is just going to be a quick how-to on creating a TextView with custom URL text.</p>
 
 <p>To do this, you need to create a Spannable text object by using Html.fromHtml and then setting the MovementMethod of the TextView to a LinkMovementMethod. Here is an example using a dialog.</p>
@@ -314,9 +314,9 @@
   
   <entry>
     <title type="html"><![CDATA[Android SQLite Database Management]]></title>
-    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/android-sqlite-database-management/"/>
+    <link href="http://thomas.holmes.io/posts/android-sqlite-database-management/"/>
     <updated>2010-11-16T00:00:00-05:00</updated>
-    <id>http://thomas-holmes.github.com/thomas-holmes/posts/android-sqlite-database-management</id>
+    <id>http://thomas.holmes.io/posts/android-sqlite-database-management</id>
     <content type="html"><![CDATA[<p>Just as I was trying to wrap up Score It! I noticed my Logcat window was getting flooded with error messages. Somehow during all my debugging and development I didn’t notice the pages of errors being thrown by SQLite.</p>
 
 <p><code>java.lang.IllegalStateException ... SQLiteDatabase created and never closed</code></p>

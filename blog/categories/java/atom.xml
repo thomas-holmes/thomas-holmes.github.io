@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: java | Thomas' Dev Mind]]></title>
-  <link href="http://thomas-holmes.github.com/thomas-holmes/blog/categories/java/atom.xml" rel="self"/>
-  <link href="http://thomas-holmes.github.com/thomas-holmes/"/>
-  <updated>2013-06-15T01:14:47-04:00</updated>
-  <id>http://thomas-holmes.github.com/thomas-holmes/</id>
+  <link href="http://thomas.holmes.io/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://thomas.holmes.io/"/>
+  <updated>2013-06-15T01:32:58-04:00</updated>
+  <id>http://thomas.holmes.io/</id>
   <author>
     <name><![CDATA[Thomas Holmes]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Android Soft Keyboard For Dialogs]]></title>
-    <link href="http://thomas-holmes.github.com/thomas-holmes/posts/android-soft-keyboard-ime-for-dialogs/"/>
+    <link href="http://thomas.holmes.io/posts/android-soft-keyboard-ime-for-dialogs/"/>
     <updated>2010-11-27T00:00:00-05:00</updated>
-    <id>http://thomas-holmes.github.com/thomas-holmes/posts/android-soft-keyboard-ime-for-dialogs</id>
+    <id>http://thomas.holmes.io/posts/android-soft-keyboard-ime-for-dialogs</id>
     <content type="html"><![CDATA[<p>It seems like such a simple thing, you would like to show the Soft Keyboard automatically for a <code>Dialog</code>. You can easily find a number of ways to do this for an <code>Activity</code>. You can also find one often repeated, but inadequate, method being proliferated for a <code>Dialog</code></p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>

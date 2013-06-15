@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://thomas-holmes.github.com/thomas-holmes/sitemap.xml 
+Sitemap: http://thomas.holmes.io/sitemap.xml 
