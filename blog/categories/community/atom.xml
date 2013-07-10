@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: ruby | Thomas' Dev Mind]]></title>
-  <link href="http://thomas.holmes.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <title><![CDATA[Category: community | Thomas' Dev Mind]]></title>
+  <link href="http://thomas.holmes.io/blog/categories/community/atom.xml" rel="self"/>
   <link href="http://thomas.holmes.io/"/>
   <updated>2013-07-09T23:03:46-04:00</updated>
   <id>http://thomas.holmes.io/</id>
@@ -29,21 +29,6 @@
 <p>My favorite challenge was where my pair and I alternatingly wrote tests for eachother but could not speak about design. Trying to move the system forward with only test code to guide us really made me rethink what kinds of information, both intended and not, that tests are capable of containing.</p>
 
 <p>I can't wait until the next Coderetreat, I definitely plan to continue attending.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ruby, Rails, And Friends]]></title>
-    <link href="http://thomas.holmes.io/posts/ruby-rails-and-friends/"/>
-    <updated>2013-05-15T00:00:00-04:00</updated>
-    <id>http://thomas.holmes.io/posts/ruby-rails-and-friends</id>
-    <content type="html"><![CDATA[<p>For the last 6 months I’ve been slowly teaching myself Ruby on Rails. It’s been a lot of fun and I’ve loved most every minute of it. My last run at web development was several years ago before technologies like Heroku were common. I spent some time trying to learn Django but did not find the ecosystem quite as mature as I would have liked. I found myself stuck playing sysadmin on a webserver, which is a role I am neither interested in or great at. So I hung up web development, experimented with mobile went back to desktop application development.</p>
-
-<p>Four years later, enter Ruby on Rails. I’m having a blast. The tools are great. The community is wonderful. And after spending every day for two years with my nose buried in Visual Studio I am thrilled to be back to vim. It is <em>bliss</em>.</p>
-
-<p>I’m active on GitHub and attend several regular meetings and extra events with the Ruby community. I’ve made tons of new friends and enjoying all of it. I’ve hardly played a video game in months and I can hardly believe it. I’ve got motivation to work a full day and then another three or four every night. It’s all fun.</p>
-
-<p>If you feel like you’re missing something in your life as a developer try to find a local group. It has made all of the difference.</p>
 ]]></content>
   </entry>
   
